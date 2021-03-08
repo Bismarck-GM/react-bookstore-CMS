@@ -1,6 +1,6 @@
 # React-Bookstore-CMS
 
-> React Project where I develop a calculator using Class Components, Prop-Types and deployment to Heroku.
+> React Project where I develop a Bookstore-CMS using Class Components, Prop-Types, Redux and deployment to Heroku.
 
 ## Screenshot:
 <!-- ![ScreenShot](./Screenshot.png) -->
