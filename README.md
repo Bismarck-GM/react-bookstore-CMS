@@ -8,7 +8,7 @@
 
 ## Live Demo:
 
-#### [React Calculator deployed in Heroku - Click Here](https://naked-cms-bookstore.herokuapp.com/)
+#### [React Book Store - CMS deployed in Heroku - Click Here](https://naked-cms-bookstore.herokuapp.com/)
 
 ## Built With
 
