@@ -1,14 +1,21 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 
 export default function BooksForm() {
   const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-  const $select = document.getElementById('category');
-  const [title, setTitle] = React.useState('');
-  const [category, setCategory] = React.useState($select.value);
+  const $title = document.getElementById('title');
+
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+
   const resetFormFields = () => {
-    const $title = document.getElementById('title');
     $title.value = '';
+    $title.focus();
   };
+
+  useEffect(() => {
+    const $select = document.getElementById('category');
+    setCategory($select.value);
+  }, []);
 
   const handleChange = e => {
     if (e.target.id === 'title') {
