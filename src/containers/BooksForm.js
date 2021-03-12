@@ -29,10 +29,14 @@ export default function BooksForm() {
   return (
     <div>
       <form action="">
+<<<<<<< HEAD:src/components/BooksForm.js
         <label htmlFor="title">
           Title:
           <input id="title" type="text" onChange={handleChange} />
         </label>
+=======
+        <input type="text" />
+>>>>>>> 23087777503a514f85eff6ee03d2fe0425cd6b96:src/containers/BooksForm.js
         <label htmlFor="category">
           Category:
           <select id="category" onChange={handleChange}>

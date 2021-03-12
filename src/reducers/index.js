@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const mockUpBooks = [
   {
     id: Math.floor(Math.random() * 9999),
@@ -32,3 +33,11 @@ const mockUpBooks = [
 ];
 
 export default mockUpBooks;
+=======
+import { combineReducers } from 'redux';
+import booksReducer from './books';
+
+export default combineReducers({
+  booksReducer,
+});
+>>>>>>> 23087777503a514f85eff6ee03d2fe0425cd6b96
