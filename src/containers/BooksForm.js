@@ -6,7 +6,6 @@ export default function BooksForm() {
     <div>
       <form action="">
         <input type="text" />
-        <input type="text" />
         <label htmlFor="category">
           Category:
           <select id="category">
