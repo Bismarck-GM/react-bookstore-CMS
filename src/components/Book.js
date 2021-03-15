@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Book({ book }) {
+export default function Book({ book, clickHandler }) {
+  const removeBook = () => {
+    clickHandler(book);
+  };
+
   return (
     <tr>
       <td>
@@ -13,6 +17,9 @@ export default function Book({ book }) {
       <td>
         {book.category}
       </td>
+      <td>
+        <button onClick={removeBook} type="button">x</button>
+      </td>
     </tr>
   );
 }
@@ -23,4 +30,5 @@ Book.propTypes = {
     id: PropTypes.number,
     category: PropTypes.string,
   }).isRequired,
+  clickHandler: PropTypes.func.isRequired,
 };

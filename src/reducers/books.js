@@ -2,31 +2,31 @@ import { CREATE_BOOK, REMOVE_BOOK } from '../actions/index';
 
 const mockUpBooks = [
   {
-    id: Math.floor(Math.random() * 100),
+    id: Math.floor(Math.random() * 9999),
     title: 'The old man and the sea',
     category: 'Kids',
 
   },
   {
-    id: Math.floor(Math.random() * 100),
+    id: Math.floor(Math.random() * 9999),
     title: 'The knight in the rusty armor',
     category: 'Action',
 
   },
   {
-    id: Math.floor(Math.random() * 100),
+    id: Math.floor(Math.random() * 9999),
     title: 'Alive',
     category: 'Action',
 
   },
   {
-    id: Math.floor(Math.random() * 100),
+    id: Math.floor(Math.random() * 9999),
     title: 'The Butterfly Effect',
     category: 'Sci-Fi',
 
   },
   {
-    id: Math.floor(Math.random() * 100),
+    id: Math.floor(Math.random() * 9999),
     title: 'Secret weapons of World War II',
     category: 'History',
 
@@ -39,7 +39,7 @@ const booksReducer = (state = mockUpBooks, action) => {
       return [...state, action.payload];
 
     case REMOVE_BOOK:
-      return state.filter(book => book !== action.payload.id);
+      return state.filter(book => book !== action.payload);
 
     default:
       return state;
