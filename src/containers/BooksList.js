@@ -18,9 +18,10 @@ const BooksList = ({
     changeFilter(filter);
   };
 
-  const filteredBooks = filter.length > 1 ? books : books.filter(
+  const filteredBooks = filter.length > 1 || filter[0] === 'All' ? books : books.filter(
     book => book.category === filter[0],
   );
+  console.log(filter === 'All');
 
   return (
     <div>
