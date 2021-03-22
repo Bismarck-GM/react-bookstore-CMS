@@ -1,9 +1,9 @@
 import { CHANGE_FILTER } from '../actions/index';
 
-const booksFilter = (state = 'all', action) => {
+const booksFilter = (state = ['All'], action) => {
   switch (action.type) {
     case CHANGE_FILTER:
-      return [action.payload];
+      return action.payload;
 
     default:
       return state;
