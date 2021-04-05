@@ -24,7 +24,7 @@ const BooksList = ({
   );
 
   return (
-    <VStack paddingX="3%" spacing={5}>
+    <VStack paddingX="100px" spacing={5}>
       <CategoryFilter filter={filter} clickHandler={handleFilterChange} />
       {filteredBooks.map(book => (
         <Book book={book} key={book.id} clickHandler={handleRemoveBook} />
