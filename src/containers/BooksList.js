@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { VStack } from '@chakra-ui/react';
+import { VStack, Divider } from '@chakra-ui/react';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions';
@@ -29,6 +29,7 @@ const BooksList = ({
       {filteredBooks.map(book => (
         <Book book={book} key={book.id} clickHandler={handleRemoveBook} />
       ))}
+      <Divider mt="20px" mb="20px" h="2px" bg="#e8e8e8" />
     </VStack>
   );
 };
