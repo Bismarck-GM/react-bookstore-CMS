@@ -11,12 +11,12 @@ import {
 
 export default function NavBar() {
   return (
-    <Flex w="100%" h="95px" align="center" fontFamily="Montserrat" paddingLeft="5%" paddingRight="5%">
+    <Flex w="100%" h="95px" align="center" fontFamily="Montserrat" paddingLeft="5%" paddingRight="5%" borderBottom="1px" borderBottomColor="#e8e8e8" bg="white">
       <Flex w="50%">
         <Heading
           fontSize="30px"
           color="#0290ff"
-          marginRight="30px"
+          marginRight="40px"
           fontWeight="bold"
         >
           Bookstore CMS

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { VStack } from '@chakra-ui/react';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
 import { removeBook, changeFilter } from '../actions';
@@ -23,23 +24,12 @@ const BooksList = ({
   );
 
   return (
-    <div>
+    <VStack paddingX="3%" spacing={5}>
       <CategoryFilter filter={filter} clickHandler={handleFilterChange} />
-      <table>
-        <thead>
-          <tr>
-            <th> ID </th>
-            <th> Title </th>
-            <th> Category </th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredBooks.map(book => (
-            <Book book={book} key={book.id} clickHandler={handleRemoveBook} />
-          ))}
-        </tbody>
-      </table>
-    </div>
+      {filteredBooks.map(book => (
+        <Book book={book} key={book.id} clickHandler={handleRemoveBook} />
+      ))}
+    </VStack>
   );
 };
 

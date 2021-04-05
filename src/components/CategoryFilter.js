@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import { MenuList, MenuItem} from '@chakra-ui/react';
 
 export default function CategoryFilter({ clickHandler, filter }) {
   const categories = ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
