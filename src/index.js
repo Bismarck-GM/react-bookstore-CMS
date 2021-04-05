@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { ChakraProvider } from '@chakra-ui/react';
+import './index.css';
 import App from './components/App';
 import rootStore from './reducers/index';
 

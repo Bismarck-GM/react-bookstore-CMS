@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box, Heading } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react';
 import BooksList from '../containers/BooksList';
 import BooksForm from '../containers/BooksForm';
 
 export default function App() {
   return (
     <div>
-      <Box w="100%" h="95px">
+      <Flex w="100%" h="95px" align="center">
         <Heading
           fontFamily="Montserrat"
           fontSize="30px"
@@ -17,7 +17,7 @@ export default function App() {
           <li>Books</li>
           <li>Categories</li>
         </ul>
-      </Box>
+      </Flex>
       <BooksForm />
       <BooksList />
     </div>
