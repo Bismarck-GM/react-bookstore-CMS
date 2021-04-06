@@ -6,7 +6,7 @@ import BooksForm from '../containers/BooksForm';
 
 export default function App() {
   return (
-    <Box bg="rgba(0, 0, 0, 0.05)">
+    <Box bg="rgba(0, 0, 0, 0.05)" minH="100vh" d="flex" flexDirection="column" justifyContent="space-between">
       <NavBar />
       <BooksList />
       <BooksForm />
