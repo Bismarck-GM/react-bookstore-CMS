@@ -16,7 +16,6 @@ import { changeFilter } from '../actions';
 const NavBar = ({ filter, changeFilter }) => {
   const handleFilterChange = filter => {
     changeFilter(filter);
-    console.log(filter);
   };
   const selectValue = filter.length > 1 ? 'All' : filter[0];
   return (
