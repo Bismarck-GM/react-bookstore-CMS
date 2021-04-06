@@ -1,6 +1,17 @@
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import {
+  // Box,
+  // HStack,
+  Flex,
+  // Divider,
+  FormControl,
+  Heading,
+  Select,
+  Input,
+  Button,
+} from '@chakra-ui/react';
 import { createBook } from '../actions';
 
 const BooksForm = ({ createBook }) => {
@@ -36,23 +47,45 @@ const BooksForm = ({ createBook }) => {
   };
 
   return (
-    <div>
-      <form action="">
-        <label htmlFor="title">
-          Title:
-          <input id="title" type="text" onChange={handleChange} value={title} />
-        </label>
-        <label htmlFor="category">
-          Category:
-          <select id="category" onChange={handleChange}>
-            {categories.map(cat => (
-              <option value={cat} key={cat}>{cat}</option>
-            ))}
-          </select>
-        </label>
-        <button type="submit" onClick={handleSubmit}>Submit</button>
-      </form>
-    </div>
+    <Flex paddingX="5%" direction="column" justifyContent="space-around" minH="150px">
+      <Heading fontSize="20px" letterSpacing="-0.18px" color="#888888" fontWeight="bold">ADD NEW BOOK</Heading>
+      <FormControl action="" d="flex" justifyContent="space-between">
+        <Input
+          id="title"
+          type="text"
+          onChange={handleChange}
+          value={title}
+          placeholder="Book Title"
+          bg="white"
+          _placeholder={{ color: '#e8e8e8' }}
+          fontFamily="Montserrat"
+          w="60%"
+        />
+        <Select
+          id="category"
+          onChange={handleChange}
+          bg="white"
+          fontFamily="Montserrat"
+          w="25%"
+        >
+          {categories.map(cat => (
+            <option value={cat} key={cat}>{cat}</option>
+          ))}
+        </Select>
+        <Button
+          type="submit"
+          onClick={handleSubmit}
+          fontFamily="Roboto Slab"
+          letterSpacing="0.5"
+          bg="#0290ff"
+          color="white"
+          fontSize="13px"
+          w="10%"
+        >
+          ADD BOOK
+        </Button>
+      </FormControl>
+    </Flex>
   );
 };
 

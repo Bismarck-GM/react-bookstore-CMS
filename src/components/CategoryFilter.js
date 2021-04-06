@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { MenuList, MenuItem, MenuGroup } from '@chakra-ui/react';
 
-export default function CategoryFilter({ clickHandler, filter }) {
+export default function CategoryFilter({ clickHandler }) {
   const categories = ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
   const changeHandle = e => {
@@ -11,20 +12,17 @@ export default function CategoryFilter({ clickHandler, filter }) {
       clickHandler([e.target.value]);
     }
   };
-  const selectValue = filter.length > 1 ? 'All' : filter[0];
   return (
-    <div>
-      Filter:
-      <select id="filter" value={selectValue} onChange={changeHandle}>
+    <MenuList>
+      <MenuGroup id="filter">
         {categories.map(cat => (
-          <option value={cat} key={cat}>{cat}</option>
+          <MenuItem value={cat} key={cat} onClick={changeHandle}>{cat}</MenuItem>
         ))}
-      </select>
-    </div>
+      </MenuGroup>
+    </MenuList>
   );
 }
 
 CategoryFilter.propTypes = {
   clickHandler: PropTypes.func.isRequired,
-  filter: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

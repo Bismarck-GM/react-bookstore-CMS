@@ -3,7 +3,7 @@
 > React Project where I develop a Bookstore-CMS using Class Components, Prop-Types, Redux and deployment to Heroku.
 
 ## Screenshot:
-<!-- ![ScreenShot](./Screenshot.png) -->
+![ScreenShot](./Screenshot.jpg)
 
 
 ## Live Demo:
@@ -18,6 +18,7 @@
 - Node.js
 - Heroku
 - prop-types
+- Chakra-UI
 
 ## Getting Started
 
