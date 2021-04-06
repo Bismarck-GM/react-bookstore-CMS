@@ -5,13 +5,22 @@ import {
   Avatar,
   Menu,
   MenuButton,
-  MenuList,
-  MenuItem,
+  // MenuList,
+  // MenuItem,
 } from '@chakra-ui/react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import CategoryFilter from './CategoryFilter';
+import { changeFilter } from '../actions';
 
-export default function NavBar() {
+const NavBar = ({ filter, changeFilter }) => {
+  const handleFilterChange = filter => {
+    changeFilter(filter);
+    console.log(filter);
+  };
+  const selectValue = filter.length > 1 ? 'All' : filter[0];
   return (
-    <Flex w="100%" h="95px" align="center" fontFamily="Montserrat" paddingLeft="5%" paddingRight="5%" borderBottom="1px" borderBottomColor="#e8e8e8" bg="white">
+    <Flex w="100%" h="95px" align="center" fontFamily="Montserrat" paddingX="5%" borderBottom="1px" borderBottomColor="#e8e8e8" bg="white">
       <Flex w="50%">
         <Heading
           fontSize="30px"
@@ -38,11 +47,9 @@ export default function NavBar() {
               letterSpacing="1.9px"
               paddingTop="5px"
             >
-              CATEGORIES
+              {`CATEGORIES > ${selectValue}`}
             </MenuButton>
-            <MenuList>
-              <MenuItem>Tuvieja</MenuItem>
-            </MenuList>
+            <CategoryFilter filter={filter} clickHandler={handleFilterChange} />
           </Menu>
         </Flex>
       </Flex>
@@ -51,4 +58,19 @@ export default function NavBar() {
       </Flex>
     </Flex>
   );
-}
+};
+
+NavBar.propTypes = {
+  changeFilter: PropTypes.func.isRequired,
+  filter: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+const mapStateToProps = state => ({
+  filter: state.filter,
+});
+
+const mapDispatch = {
+  changeFilter,
+};
+
+export default connect(mapStateToProps, mapDispatch)(NavBar);
